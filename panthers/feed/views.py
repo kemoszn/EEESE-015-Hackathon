@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
-
+from .forms import EventForm
 
 def news_list(request):
     glo_news = New.objects.filter(description='Global')
@@ -18,18 +18,32 @@ def news_list(request):
     return render(request, 'news.html', context)
 
 def news_detail(request, year, month, day, news):
-    news = get_object_or_404(New, slug=post, publish__year=year, publish__month=month, publish__day= day)
+    news = get_object_or_404(New, slug=news, publish__year=year, publish__month=month, publish__day= day)
     
-    return render(request, 'news_detail.html', {'news': news})
+    return render(request, 'news_detail.html', {'g': news})
     
 def events_list(request):
-    elec_news = New.objects.filter(description='Electrical')
-    chem_news = New.objects.filter(description='Chemical')
-    civil_news = New.objects.filter(description='Civil')
+    elec_events = Event.objects.filter(department='Electrical')
+    chem_events = Event.objects.filter(department='Chemical')
+    civil_events = Event.objects.filter(department='Civil')
     context = {
-        'elec_news': elec_news,
-        'chem_news': chem_news,
-        'civil_news':civil_news,       
+        'elec_events': elec_events,
+        'chem_events': chem_events,
+        'civil_events':civil_events,       
     }
-    return render(request,'events.html',context)
+    return render(request,'events.html',{'a':elec_events ,'b': civil_events},)
     
+
+
+
+def AddEvent(request):
+    if request.method == 'POST':
+        event_form = EventForm(data=request.POST)
+        if event_form.is_valid():
+            new_event = event_form.save(commit=False)
+            new_event.save()
+            return HttpResponse("<h3> Thank you! Your Event is being processed and approved soon by the administration. </h3>")
+    else:
+        event_form = EventForm()
+
+        return render(request, 'new_event.html', {'event_form': event_form})

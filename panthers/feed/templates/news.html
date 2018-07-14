@@ -10,7 +10,7 @@ News
 <h4> Global </h4>
 <div class="container">
     {% for g in glo_news %}
-<h5> {{ g.title }} by {{ g.author }}  at {{ g.publish }} </h5>
+<h5><a href="{{ g.get_absolute_url }}"> {{ g.title }} </a>  by {{ g.author }}  at {{ g.publish }} </h5>
 <p>{{ g.body }}</p>
 <hr>
 </div>
@@ -20,7 +20,7 @@ News
 <h4> Electrical </h4>
 <div class="container">
     {% for g in elec_news %}
-<h5> {{ g.title }} by {{ g.author }}  at {{ g.publish }} </h5>
+<h5><a href="{{ g.get_absolute_url }}"> {{ g.title }} </a>  by {{ g.author }}  at {{ g.publish }} </h5>
 <p>{{ g.body }}</p>
 <hr>
     {% endfor %}

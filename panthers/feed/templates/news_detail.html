@@ -1,1 +1,15 @@
-<h2>Bitchhh</h2>
+{% extends 'base.html' %}
+
+{% block title %}
+{{ g.title }}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<h3>{{ g.title }} by {{ g.author }}</h3> 
+<p>{{ g.body }}</p> 
+
+</div>
+
+{% endblock %}

@@ -31,6 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'black_panthers',
+    'ChatRoom',
+    'help',
+    'About',
+    'admission',
     'feed',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 
 
 class Event(models.Model):
@@ -12,11 +13,11 @@ class Event(models.Model):
     author = models.CharField(max_length=20)
     name = models.CharField(max_length=20)
     description = models.TextField(max_length=30)
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=timezone.now)
     department = models.CharField(max_length=10, choices=DEPARTMENT_CHOICES)
     place = models.CharField(max_length=10)
     slug = models.SlugField(max_length=250, unique_for_date='date')
-    
+    #approved = models.BooleanField(default=False)
     
     class Meta:
         ordering = ('-date',)
@@ -49,7 +50,11 @@ class New(models.Model):
     def __str__(self):
         return self.title
     
-
+    def get_absolute_url(self):
+        return reverse('feed:news_detail', args=[self.publish.year, 
+                                                self.publish.strftime('%m'),
+                                                self.publish.strftime('%d'),
+                                               self.slug])
     
     
     

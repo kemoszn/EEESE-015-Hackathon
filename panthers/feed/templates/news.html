@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block title %}
 News 
@@ -6,24 +7,64 @@ News
 
 
 {% block content %}
-<h2>Our latest news</h2> 
-<h4> Global </h4>
-<div class="container">
-    {% for g in glo_news %}
-<h5><a href="{{ g.get_absolute_url }}"> {{ g.title }} </a>  by {{ g.author }}  at {{ g.publish }} </h5>
-<p>{{ g.body }}</p>
-<hr>
-</div>
+	<div class="technology">
+	<div class="container">
+		<div class="col-md-12 ">
+			<div class="blog">
+		
+			<h2 class="w3">News</h2>
+			<div class="blog-grids1">
+				<div class="col-md-6 blog-grid">
+					<div class="blog-grid-left1">
+						<a href="singlepage.html"><img src="{% static 'images/t1.jpg' %}" alt=" " class="img-responsive"></a>
+					</div> 
+					<div class="blog-grid-right1">
+						{% for i in glo %}
+						<a href="singlepage.html">{{ i.author }}</a>
+						<h4>{{ i.publish }}</h4>
+						<p>{{ i.body }}</p>
+							{% endfor %}
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 blog-grid">
+					<div class="blog-grid-left1">
+						<a href="singlepage.html"><img src="{% static 'images/t2.jpg' %}" alt=" " class="img-responsive"></a>
+					</div> 
+					<div class="blog-grid-right1">
+						<a href="singlepage.html">sint occaecat cupidatat</a>
+						<h4>28 July 2016</h4>
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
+							cillum dolore eu fugiat nulla pariatur.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
 
-{% endfor %}
-
-<h4> Electrical </h4>
-<div class="container">
-    {% for g in elec_news %}
-<h5><a href="{{ g.get_absolute_url }}"> {{ g.title }} </a>  by {{ g.author }}  at {{ g.publish }} </h5>
-<p>{{ g.body }}</p>
-<hr>
-    {% endfor %}
+			<div class="blog-grids1">
+				<div class="col-md-6 blog-grid">
+					<div class="blog-grid-left1">
+						<a href="singlepage.html"><img src="{% static 'images/t3.jpg' %}" alt=" " class="img-responsive"></a>
+					</div> 
+					<div class="blog-grid-right1">
+						<a href="singlepage.html">sint occaecat cupidatat</a>
+						<h4>27 July 2016</h4>
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
+							cillum dolore eu fugiat nulla pariatur.</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				
+				<div class="clearfix"> </div>
+			</div>
+		
+			
+	</div>
+		</div>
+		<div class="clearfix"></div>
+		<!-- technology-right -->
+	</div>
 </div>
 
 {% endblock %}

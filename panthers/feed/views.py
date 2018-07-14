@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import EventForm
+from django.http import HttpResponse
 
 def news_list(request):
     glo_news = New.objects.filter(description='Global')
@@ -9,7 +10,7 @@ def news_list(request):
     civil_news = New.objects.filter(description='Civil')
     
     context = {
-        'glo_news': glo_news,
+        'glo': glo_news,
         'elec_news': elec_news,
         'chem_news': chem_news,
         'civil_news':civil_news,        
@@ -42,7 +43,7 @@ def AddEvent(request):
         if event_form.is_valid():
             new_event = event_form.save(commit=False)
             new_event.save()
-            return HttpResponse("<h3> Thank you! Your Event is being processed and approved soon by the administration. </h3>")
+            return render(request, 'thank_you.html') 
     else:
         event_form = EventForm()
 

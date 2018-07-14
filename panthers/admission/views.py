@@ -13,5 +13,5 @@ def AdmissionRequest(request):
 	else:
 		admission_form = AdmissionForm()
 
-		return render(request, 'index.html', {'admission_form': admission_form})
+		return render(request, 'admission.html', {'admission_form': admission_form})
 

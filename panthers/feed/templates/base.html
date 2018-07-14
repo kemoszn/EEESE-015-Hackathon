@@ -1,143 +1,126 @@
 {% load staticfiles %}
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
-    <link href="{% static "css/main.css" %}" rel="stylesheet"> 
+<title>{% block title %} {% endblock %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Style Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' /> 
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- animation-effect -->
+<link href="{% static 'css/animate.min.css' %}" rel="stylesheet"> 
+<script src="{% static 'js/wow.min.js' %}"></script>
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;    
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-</style>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<!-- //animation-effect -->
 </head>
 <body>
-
-<div class="navbar">
-  <a href="http://127.0.0.1:8000/Feed/Events/">Events</a>
-  <a href="http://127.0.0.1:8000/Feed/News/">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">StudentHub 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="http://127.0.0.1:8000/board/">Discussion Boards</a>
-      <a href="http://127.0.0.1:8000/help/">Help Me!</a>
-      <a href="http://127.0.0.1:8000/ChatRoom/">Chatrooms</a>
-    </div>
-  </div> 
-  <a href="http://127.0.0.1:8000/Admission/">Admission</a>
-  <a href="http://127.0.0.1:8000/About/">About</a>
-   <div class="dropdown">
-    <button class="dropbtn">Panthers 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="http://127.0.0.1:8000/black_panthers/Students/">Students</a>
-      <a href="http://127.0.0.1:8000/black_panthers/Alumnis/">Alumni's</a>
-      <a href="http://127.0.0.1:8000/black_panthers/Professors/">Professors</a>
-      <a href="http://127.0.0.1:8000/black_panthers/Employees/">Employees</a>
-    </div>
-  </div> 
-</div>
-<div id="content">
-        {% block content %}
-        {% endblock %}
+<div class="header" id="ban">
+    <div class="container">
+      <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+        
+      </div>
+      <div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+      <nav class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+          <nav class="link-effect-7" id="link-effect-7">
+            <ul class="nav navbar-nav">
+              <li><a href="http://127.0.0.1:8000">Home</a></li>
+              <li><a href="http://127.0.0.1:8000/Feed/News/">News</a></li>
+              <li><a href="http://127.0.0.1:8000/Feed/Events/">Events</a></li>
+              <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Student Hub<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="droplistelement"><a href="http://127.0.0.1:8000/board/">Discussion Board</a></li>
+                                        <li class="droplistelement"><a href="#">ChatRooms</a></li>
+                                    </ul>
+                                </li>
+
+              <li><a href="http://127.0.0.1:8000/Admission">Admission</a></li>
+              <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panthers<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="droplistelement"><a href="http://127.0.0.1:8000/black_panthers/Students/login/">Students</a></li>
+                                        <li class="droplistelement"><a href="http://127.0.0.1:8000/black_panthers/Professors/login/">Professors</a></li>
+                                        <li class="droplistelement"><a href="http://127.0.0.1:8000/black_panthers/Alumnis/login/">Alumni's</a></li>
+                                        <li class="droplistelement"><a href="http://127.0.0.1:8000/black_panthers/Employees/login/">Employees</a></li>
+                                    </ul>
+                                </li>
+              <li><a href="http://127.0.0.1:8000/About">About</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- /.navbar-collapse -->
+      </nav>
+      </div>
+      <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+          <ul>
+            <li><a href="#"> </a></li>
+            <li><a href="#" class="pin"> </a></li>
+            <li><a href="#" class="in"> </a></li>
+          </ul>
+        </div>
+      <div class="clearfix"> </div> 
+    </div>
+  </div>
+  <!--start-main-->
+  <div class="header-bottom">
+    <div class="container">
+      <div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <h1><a href="http://127.0.0.1:8000">PANTHERS</a></h1>
+        <p><label class="of"></label>The University You Choose.<label class="on"></label></p>
+      </div>
+    </div>
+  </div>
+<!-- banner -->
+
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+
+<div class="footer">
+    <div class="container">
+      <div class="col-md-12 footer-middle" style="text-align: center;">
+      <a href="index.html"><h4>Panthers University</h4></a>
+      <div class="mid-btm" id="footerback">
+        <a href="http://127.0.0.1:8000" id="footerlist" style="margin-right: 10px;">Home</a>
+        <a href="http://127.0.0.1:8000/Feed/News/" style="margin-right: 10px; margin-left: 10px;">News</a>
+        <a href="http://127.0.0.1:8000/Feed/Events/" style="margin-right: 10px; margin-left: 10px;">Events</a>
+        <a href="http://127.0.0.1:8000/board/"  style="margin-right: 10px; margin-left: 10px;">Student Hub</a>
+        <a href="http://127.0.0.1:8000/Admission" style="margin-right: 10px; margin-left: 10px;">Addmission</a>
+        <a href="panthers.html" style="margin-right: 10px; margin-left: 10px;">Panthers</a>
+        <a href="http://127.0.0.1:8000/About" style="margin-right: 10px; margin-left: 10px;">About</a>
+      </div>
+      
+        
+    
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
 </body>
 </html>
-
-
-
-<!--{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-    <link href="{% static "css/main.css" %}" rel="stylesheet"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
- 
-    
-    <div class="navbar">
-      
-    <ul>
-  <li><a href="http://127.0.0.1:8000/Feed/News/">News</a></li>
-  <li><a href="http://127.0.0.1:8000/Feed/Events/">Events</a></li>
-  <li><a href="contact.asp">StudentHub</a></li>
-
-
-  <li><a href="http://127.0.0.1:8000/Admission/">Admission</a></li>
- <li><a href="http://127.0.0.1:8000/About/">About</a></li>
-        <li><a href="about.asp">Panthers</a></li>
-</ul>
-    </div>
-    
-    <body>
-    <div id="content">
-       
-        </div>
-    </body>
-</html>
--->

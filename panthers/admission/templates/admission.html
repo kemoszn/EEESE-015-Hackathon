@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+
+Admission
+{% endblock %}
+      {% block content %}
+   <div class="logo">
+          
+      <a href="index.html">Admitions <span>System</span></a>
+      
+    </div>
+    
+    <!-- //Top-Bar -->
+    <div class="banner-main jarallax">
+      <div class="container">
+        <div class="banner-inner">
+          <div class="col-md-5 banner-left">
+             <form action="." method="post">
+            {{ admission_form.as_p }}
+            {% csrf_token %}
+            <p><input type='submit' value="Add" ></p>
+          </form>
+          </div>
+          <div class="col-md-7 banner-right">
+            <h1>Adminstration Process details!</h1>
+            <h4>you can apply either to get your certificate or to organise a cultcural, social or any kinds of event in panther university by filling this formats.</h4>
+              <div class="banner-right-text">
+                <div class="main-icon">
+                  <i class="fa fa-share" aria-hidden="true"></i>
+                </div>
+                <p>we will contact you to pay your bills.</p>
+              <div class="clearfix"></div>
+                </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+
+
+        {% endblock %}
+    </body>
+</html>

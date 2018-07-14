@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %} Discussions {% endblock %}
+{% block content %}
+<h1 style="color: orange; text-align: center;">Discussions</h1>
+{% for post in posts %}
+<h2>
+    <a href="{{ post.get_absolute_url }}">
+        {{ post.title }}
+    </a>
+</h2>
+<p class="date">
+     {{ post.author }} at {{ post.publish }} 
+</p>
+{{ post.body|truncatewords:30|linebreaks }}
+<hr>
+{% endfor %}
+{% endblock %}

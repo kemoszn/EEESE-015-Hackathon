@@ -1,0 +1,14 @@
+img{
+    transition: all .5s !important;
+}
+img:hover{
+    transform: scale(1.1)!important;
+    
+}
+.banner,.banner-1{
+    background: url(../images/Uni/academic-adult-architecture-159740.jpg) no-repeat 0px 0px !important;
+        background-size: cover !important;
+}
+#insidetext{
+    color: white;
+}

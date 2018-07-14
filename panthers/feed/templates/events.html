@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block title %}
 Events 
@@ -6,26 +7,103 @@ Events
 
 
 {% block content %}
-<h2>Panthers Events</h2> 
-<h4> Civil </h4>
-<div class="container">
-    {% for g in b %}
-        <h5>{{ g.name }} by {{ g.author }} at {{ g.date }} </h5>
-        <p>{{ g.description }}</p>
-        <hr>
-</div>
-   {% endfor %}
+<div style="text-align: center;"> <button style="text-align: center;"><a href="http://127.0.0.1:8000/Feed/Events/Add/"> Add a New Event! </a></button> </div>
 
-
-<h4> Electrical </h4>
-<div class="container">
-    {% for g in a %}
-<h5> {{ g.name }} by {{ g.author }}  at {{ g.date }} </h5>
-<p>{{ g.description }}</p>
-<hr>
-    {% endfor %}
-</div>
-
-<h3 style="text-decoration: underline;"><a href="http://127.0.0.1:8000/Feed/Events/Add/"> Add a new event </a></h3>
+	<div class="technology">
+	<div class="container">
+		<div class="col-md-9 technology-left">
+			<div class="music">
+				<div class="latest">
+						<h2 class="w3">ACADEMIC EVENTS</h2>
+						<div class="tip-grids">
+							<div class="col-md-6 tip-grid">
+								<figure class="effect-julia">
+									<img src="{% static 'images/m5.jpg' %}" alt="">
+												
+								</figure>
+							</div>
+							<div class="col-md-6 tip-grid-right">
+								<div class="tip-gd-left">
+										<h4>Voluptas sit aspernatur</h4>
+										<p> Temporibus autem quibusdam et aut officiis 
+									debitis aut rerum necessitatibus saepe eveniet ut 
+									et voluptates repudiandae sint et molestiae non recusandae. .</p>
+									<p> Temporibus autem quibusdam et aut officiis 
+									debitis aut rerum necessitatibus saepe eveniet ut 
+									et voluptates repudiandae .</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				</div>
+				<div class="latest">
+						<h2 class="w3">SOCIAL EVENTS</h2>
+						<div class="tip-grids">
+							<div class="col-md-6 tip-grid">
+								<figure class="effect-julia">
+									<img src="{% static 'images/m5.jpg' %}" alt="">
+												
+								</figure>
+							</div>
+							<div class="col-md-6 tip-grid-right">
+								<div class="tip-gd-left">
+										<h4>Voluptas sit aspernatur</h4>
+										<p> Temporibus autem quibusdam et aut officiis 
+									debitis aut rerum necessitatibus saepe eveniet ut 
+									et voluptates repudiandae sint et molestiae non recusandae. .</p>
+									<p> Temporibus autem quibusdam et aut officiis 
+									debitis aut rerum necessitatibus saepe eveniet ut 
+									et voluptates repudiandae .</p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<!-- technology-right -->
+		<div class="col-md-3 technology-right">
+				
+				
+				<div class="blo-top1">
+							
+					<div class="tech-btm">
+					
+					<h4>CHARITIES </h4>
+						<div class="blog-grids">
+							<div class="blog-grid-left">
+								<a href="singlepage.html"><img src="{% static 'images/t2.jpg' %}" class="img-responsive" alt=""></a>
+							</div>
+							<div class="blog-grid-right">
+								
+								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="blog-grids">
+							<div class="blog-grid-left">
+								<a href="singlepage.html"><img src="{% static 'images/m2.jpg' %}" class="img-responsive" alt=""></a>
+							</div>
+							<div class="blog-grid-right">
+								
+								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						
+						
+					
+					</div>
+					</div>
+					
+					
+					
+				</div>
+				
+			
+		</div>
+		<div class="clearfix"></div>
+		<!-- technology-right -->
+	</div>
 
 {% endblock %}
